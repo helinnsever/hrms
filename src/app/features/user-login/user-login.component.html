@@ -1,0 +1,264 @@
+<!-- 
+
+
+
+<!-- 
+<div class="container-fluid rounded">
+    <div class="row px-5">
+        <div class="col-sm-6">
+            <div>
+                <h3 class="text-white">Get a quote</h3>
+                <p class="text-secondary">Fill up the form and our Team will get back to you within in 24 hours</p>
+            </div>
+            <div class="links" id="bordering"> <a href="#" class="btn rounded text-white p-3"><i class="fa fa-phone icon text-primary pr-3"></i>+0123 4567 8910</a> <a href="#" class="btn rounded text-white p-3"><i class="fa fa-envelope icon text-primary pr-3"></i>hello@flowbase.com</a> <a href="#" class="btn rounded text-white p-3"><i class="fa fa-map-marker icon text-primary pr-3"></i>102 street 2714 Don</a> </div>
+            <div class="pt-lg-4 d-flex flex-row justify-content-start">
+                <div class="pad-icon"> <a class="fa fa-facebook text-white" href="#"></a> </div>
+                <div class="pad-icon"> <a class="fa fa-twitter text-white" href="#"></a> </div>
+                <div class="pad-icon"> <a class="fa fa-instagram text-white" href="#"></a> </div>
+            </div>
+        </div>
+        <div class="col-sm-6 pad">
+            <form class="rounded msg-form">
+                <div class="form-group"> <label for="name" class="h6">Your Name</label>
+                    <div class="input-group border rounded">
+                        <div class="input-group-addon px-2 pt-1">
+                            <p class="fa fa-user-o text-primary"></p>
+                        </div> <input type="text" class="form-control border-0">
+                    </div>
+                </div>
+                <div class="form-group"> <label for="name" class="h6">Email</label>
+                    <div class="input-group border rounded">
+                        <div class="input-group-addon px-2 pt-1"> <i class="fa fa-envelope text-primary"></i> </div> <input type="text" class="form-control border-0">
+                    </div>
+                </div>
+                <div class="form-group"> <label for="msg" class="h6">Message</label> <textarea name="message" id="msgus" cols="10" rows="5" class="form-control bg-light" placeholder="Message"></textarea> </div>
+                <div class="form-group d-flex justify-content-end"> <input type="submit" class="btn btn-primary text-white" value="send message"> </div>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+<!-- <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="#">
+            <h1>Create Account</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your email for registration</span>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button>Sign Up</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="#">
+            <h1>Sign in</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your account</span>
+            <input type="email" placeholder="Email" />
+            <input class="form-control mt-1" type="password" id="password" formControlName="password"
+                placeholder="Password">
+            <small *ngIf="loginForm.get('password').hasError('password') && loginForm.get('password').touched"
+                class="form-text text-muted">
+            </small>
+            <input class="form-control mt-1" type="text" id="email" formControlName="email" placeholder="E-mail">
+            <small *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').touched"
+                class="form-text text-muted">
+            </small>
+            <button class="w-100 btn btn-lg btn-primary mt-3" type="submit" [disabled]="!loginForm.valid"
+                    (click)="loginUser()" routerLink="home">Login</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn" routerLink="">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>
+        Created with <i class="fa fa-heart"></i> by
+        <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+        - Read how I created this and how you can join the challenge
+        <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+    </p>
+</footer> -->
+
+
+<!-- <div class="limiter" id="login">
+    <div class="container-login100" style="background-image:url(https://images.unsplash.com/photo-1598257006675-0aaec40301f9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80)">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="login_topimg"> </div>
+                    <div class="wrap-login100">
+                        <form class="login100-form validate-form"> <span class="login100-form-title "> Login </span> <span class="login100-form-subtitle m-b-16"> to your account </span>
+                            <div class="wrap-input100 validate-input m-b-16" data-validate="Valid email is required: ex@abc.xyz"> <input class="input100" type="text" name="Username" placeholder="Username"> <span class="focus-input100"></span> <span class="symbol-input100"> <span class="glyphicon glyphicon-user"></span> </span> </div>
+                            <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required"> <input class="input100" type="password" name="pass" placeholder="Password"> <span class="focus-input100"></span> <span class="symbol-input100"> <span class="glyphicon glyphicon-lock"></span> </span> </div>
+                            <div class="flex-sb-m w-full p-b-30">
+                                <div class="contact100-form-checkbox"> <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me"> <label class="label-checkbox100" for="ckb1"> Remember me </label> </div>
+                                <div> <a href="#" class="txt1"> Forgot Password? </a> </div>
+                            </div>
+                            <div class="container-login100-form-btn p-t-25"> <button class="login100-form-btn"> Login </button> </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- 
+<div class="container">
+    <div class="row d-flex justify-content-center mt-5">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card py-3 px-2">
+                <p class="text-center mb-3 mt-2">SE CONNECTER AVEC</p>
+                <div class="row mx-auto ">
+                    <div class="col-4"> <i class="fab fa-twitter"></i> </div>
+                    <div class="col-4"> <i class="fab fa-facebook"></i> </div>
+                    <div class="col-4"> <i class="fab fa-google"></i> </div>
+                </div>
+                <div class="division">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="line l"></div>
+                        </div>
+                        <div class="col-6"><span>OU AVEC MON EMAIL</span></div>
+                        <div class="col-3">
+                            <div class="line r"></div>
+                        </div>
+                    </div>
+                </div>
+                <form class="myform">
+                    <div class="form-group"> <input type="email" class="form-control" placeholder="Email"> </div>
+                    <div class="form-group"> <input type="password" class="form-control" placeholder="Mot de passe"> </div>
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="form-group form-check"> <input type="checkbox" class="form-check-input" id="exampleCheck1"> <label class="form-check-label" for="exampleCheck1">Rester connecte</label> </div>
+                        </div>
+                        <div class="col-md-6 col-12 bn">Mot se passe oublie</div>
+                    </div>
+                    <div class="form-group mt-3"> <button type="button" class="btn btn-block btn-primary btn-lg"><small><i class="far fa-user pr-2"></i>Se connecter</small></button> </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- 
+<div class="container">
+    <div class="body d-md-flex align-items-center justify-content-between">
+        <div class="box-1 mt-md-0 mt-5"> <img src="https://images.pexels.com/photos/2033997/pexels-photo-2033997.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" class="" alt=""> </div>
+        <div class=" box-2 d-flex flex-column h-100">
+            <div class="mt-5">
+                <p class="mb-1 h-1">Create Account.</p>
+                <p class="text-muted mb-2">Share your thouhts with the world form today.</p>
+                <div class="d-flex flex-column ">
+                    <p class="text-muted mb-2">Continue with...</p>
+                    <div class="d-flex align-items-center"> <a href="#" class="box me-2 selectio"> <span class="fab fa-facebook-f mb-2"></span>
+                            <p class="mb-0">Facebook</p>
+                        </a> <a href="#" class="box me-2"> <span class="fab fa-google mb-2"></span>
+                            <p class="mb-0">Google</p>
+                        </a> <a href="#" class="box"> <span class="far fa-envelope mb-2"></span>
+                            <p class="mb-0">Email</p>
+                        </a> </div>
+                    <div class="mt-3">
+                        <p class="mb-0 text-muted">Already have an account?</p>
+                        <div class="btn btn-primary" routerLink="login">Log in<span class="fas fa-chevron-right ms-1"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-auto">
+                <p class="footer text-muted mb-0 mt-md-0 mt-4">By register you agree with our <span class="p-color me-1">terms and conditions</span>and <span class="p-color ms-1">privacy policy</span> </p>
+            </div>
+        </div> <span class="fas fa-times"></span>
+    </div>
+</div> -->
+
+
+<div class="register-photo shadow  rounded">
+    <div class="form-container">
+        <div class="image-holder"></div>
+        <form method="post" [formGroup]="loginForm">
+            <h2 class="text-center"><strong>Welcome back!</strong></h2>
+            <div class="form-group">
+                <input class="form-control mt-1" type="text" id="email" formControlName="email" placeholder="E-mail">
+                    <small *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').touched"
+                        class="form-text text-muted">
+                    </small>
+                <!-- <input class="form-control" type="Username" name="Username" placeholder="Username"> -->
+            </div>
+            <div class="form-group">
+                <input class="form-control mt-1" type="password" id="password" formControlName="password"
+                        placeholder="Password">
+                    <small *ngIf="loginForm.get('password').hasError('password') && loginForm.get('password').touched"
+                        class="form-text text-muted">
+                    </small>
+                <!-- <input class="form-control" type="password" name="password" placeholder="Password"> -->
+            </div>
+            <div class="form-group">
+                <div class="d-flex justify-content-between">
+                    <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Remember me </label> </div>
+                    <div> <a  class="text-info" routerLink="/login/password">Forgot Password</a> </div>
+                </div>
+            </div>
+            <div class="form-group"><button class="btn btn-success btn-block btn-info"  (click)="loginUser()" routerLink="home" type="submit">Login</button></div><a class="already" href="#">Terms of Use and Privacy Policy</a>
+        </form>
+    </div>
+</div>
+
+<!-- 
+<div class="container col-xl-10 col-xxl-25 px-4 py-5 shadow p-3 mb-5 bg-white rounded">
+    <div class="row align-items-center g-lg-6 py-6">
+        <div class="col-lg-7 text-center text-lg-start">
+            <img src="https://cdni.iconscout.com/illustration/premium/thumb/freelance-job-2578973-2147143.png" alt="">
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5 ">
+            <form class="p-4 p-md-5" [formGroup]="loginForm">
+                <div class="form-group">
+                    
+                    <label class="text-primary">Email</label>
+                    <input class="form-control mt-1" type="text" id="email" formControlName="email" placeholder="E-mail">
+                    <small *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').touched"
+                        class="form-text text-muted">
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="text-primary mt-2">Password</label>
+                    <input class="form-control mt-1" type="password" id="password" formControlName="password"
+                        placeholder="Password">
+                    <small *ngIf="loginForm.get('password').hasError('password') && loginForm.get('password').touched"
+                        class="form-text text-muted">
+                    </small>
+                </div>
+
+                
+                <button class="w-100 btn btn-lg btn-primary mt-3" type="submit" [disabled]="!loginForm.valid"
+                    (click)="loginUser()" routerLink="home">Login</button>
+                <hr class="my-4">
+                <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+            </form>
+        </div>
+    </div>
+</div> --> -->

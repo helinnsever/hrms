@@ -1,0 +1,158 @@
+<!-- <div class="content shadow p-3 mb-5 bg-white rounded mar">
+
+     <div class="row">
+        <div class="col-md-6">
+            <div class="sign-img">
+                <img [src]="'assets/image/sign.svg'" width="100%">
+            </div>
+            
+        </div>
+    <div class="col-md-6">
+        <form [formGroup]="employerSignForm">
+            <div class="form-group">
+                <label class="text-primary ">Company Name</label>
+                <input class="form-control mt-2" type="text" id="companyName" formControlName="companyName" >
+                <small *ngIf="employerSignForm.get('companyName').hasError('required') && employerSignForm.get('companyName').touched" class="form-text text-muted">
+                    Company name is required
+                </small>
+            </div>
+            <div class="form-group mt-3">
+                <label class="text-primary">Website</label>
+                <input class="form-control " type="text" id="website" formControlName="website" >
+                <small *ngIf="employerSignForm.get('website').hasError('required') && employerSignForm.get('website').touched" class="form-text text-muted">
+                    Website is required
+                </small>
+
+            </div>
+            <div class="form-group">
+                <label class="text-primary mt-3">Phone Number</label>
+                <input class="form-control" type="text" id="nationalityId" formControlName="phoneNumber" >
+                <small *ngIf="employerSignForm.get('phoneNumber').hasError('required') && employerSignForm.get('phoneNumber').touched" class="form-text text-muted">
+                    Phone number is required
+                </small>
+
+            </div>
+    
+            <div class="form-group">
+                <label class="text-primary mt-3">Email</label>
+                <input class="form-control mt" type="text" id="email" formControlName="email" >
+                <small *ngIf="employerSignForm.get('email').hasError('required') && employerSignForm.get('email').touched" class="form-text text-muted">
+                    Email is required
+                </small>
+
+            </div>
+            <div class="form-group">
+                <label class="text-primary mt-3">Password</label>
+                <input class="form-control" type="text" id="password" [(ngModel)]="password" formControlName="password" >
+                <small *ngIf="employerSignForm.get('password').hasError('required') && employerSignForm.get('password').touched" class="form-text text-muted">
+                    Password is required
+                </small>
+
+            </div>
+            <div class="form-group">
+                <label class="text-primary mt-3">Password Again</label>
+                <input class="form-control" type="text" id="verifyPassword" [(ngModel)]="verifyPassword" formControlName="verifyPassword" >
+                <small *ngIf="employerSignForm.get('verifyPassword').hasError('required') && employerSignForm.get('verifyPassword').touched" class="form-text text-muted">
+                    Password is required
+                </small>
+
+            </div>
+            <button [disabled]="!employerSignForm.valid" class="btn btn-primary btn-fill mt-3" (click)="add()">Sign in</button>
+        </form>
+    </div>
+</div> -->
+
+
+
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+    <div class="shadow p-3 mb-5 bg-body rounded">
+    <div class="card px-1 py-4">
+        <div class="card-body">
+            <h6 class="card-title mb-3">This appointment is for</h6>
+            <div class="d-flex flex-row"> <label class="radio mr-1"> <input type="radio" name="add" value="anz" checked> <span> <i class="fa fa-user">
+             </i> Anz CMK </span> </label> <label class="radio"> <input type="radio" name="add" value="add"> <span> <i class="fa fa-plus-circle">
+             </i> Add </span> </label> </div>
+
+
+ 
+            <h6 class="information mt-4">Please provide following information about Anz CMK</h6>
+            <form [formGroup]="employerSignForm">
+            <div class="row">
+ 
+                <input class="form-control mt-2" type="text" id="companyName" formControlName="companyName" placeholder="Company Name" >
+                <small *ngIf="employerSignForm.get('companyName').hasError('required') && employerSignForm.get('companyName').touched" class="form-text text-muted">
+                    Company name is required
+                </small>
+
+            </div>
+
+            <div class="row">
+
+                <input class="form-control " type="text" id="website" formControlName="website" placeholder="Website" >
+                <small *ngIf="employerSignForm.get('website').hasError('required') && employerSignForm.get('website').touched" class="form-text text-muted">
+                    Website is required
+                </small>
+
+            </div>
+
+            <div class="row">
+                <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Phone Number">
+              
+               
+                <small *ngIf="employerSignForm.get('phoneNumber').hasError('required') && employerSignForm.get('phoneNumber').touched" class="form-text text-muted">
+                    Phone number is required
+                </small>
+            </div>
+
+            <div class="row">
+                <input class="form-control mt" type="text" id="email" formControlName="email" placeholder="E-mail">
+                <small *ngIf="employerSignForm.get('email').hasError('required') && employerSignForm.get('email').touched" class="form-text text-muted">
+                    Email is required
+                </small>
+
+                   
+
+            </div>
+
+
+            <div class="row">
+
+                <input class="form-control" type="text" id="password" [(ngModel)]="password" formControlName="password" placeholder="Password">
+                <small *ngIf="employerSignForm.get('password').hasError('required') && employerSignForm.get('password').touched" class="form-text text-muted">
+                    Password is required
+                </small>
+                    
+            </div>
+
+            <div class="row">
+
+               
+                <input class="form-control" type="text" id="verifyPassword" [(ngModel)]="verifyPassword" formControlName="verifyPassword" placeholder="Password Again">
+                <small *ngIf="employerSignForm.get('verifyPassword').hasError('required') && employerSignForm.get('verifyPassword').touched" class="form-text text-muted">
+                    Password is required
+                </small>
+
+            </div>
+
+</form>
+            <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> 
+                <small class="agree-text">By Booking this appointment you agree to the</small> 
+                <a href="#" class="terms">Terms & Conditions</a> </div> 
+                <button [disabled]="!employerSignForm.valid" class="btn btn-primary btn-fill mt-3 mx-3" (click)="add()">Sign
+                    in</button>
+        </div>
+    </div>
+</div></div>
+
+
+<!-- <h1>International Telephone Input - BOOTSTRAP INPUT GROUP</h1>
+<form>
+  <div class="input-group">
+    
+  </div>
+  <br>
+  <div class="input-group">
+    <input type="tel" class="form-control">
+    <span class="input-group-addon">Tel</span>
+  </div>
+</form> -->

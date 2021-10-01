@@ -1,0 +1,167 @@
+<div class="row mt-5">
+    <div class="newsletter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="content">
+                        <form [formGroup]="systemEmployeeFirstNameUpdate">
+                            <div class="mb-3">
+
+                                <div class="row">
+                                    <label>First Name</label>
+                                    <div class="col"><img>Update your first Name
+                                        updates</div>
+                                    <div class="col"> <input class="form-select" formControlName="firstName"></div>
+                                    <div class="col"><button [disabled]="!systemEmployeeFirstNameUpdate.valid"
+                                            (click)="updateFirstName()" class="btn btn-primary">
+                                            Update
+                                        </button></div>
+
+                                </div>
+                            </div>
+                            
+
+                           
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="newsletter1">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="content">
+                        <form [formGroup]="systemEmployeeLastNameUpdate">
+                            <div class="mb-3">
+
+                                <div class="row">
+                                    <label>Last Name</label>
+                                    <div class="col"><img>Update your last Name
+                                        updates</div>
+                                    <div class="col"> <input class="form-select" formControlName="lastName"></div>
+                                    <div class="col"><button [disabled]="!systemEmployeeLastNameUpdate.valid"
+                                            (click)="updateLastName()" class="btn btn-primary">
+                                            Update
+                                        </button></div>
+
+                                </div>
+                            </div>
+                          
+
+                            
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="row mt-5">
+    <div class="newsletter2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="content">
+                        <form [formGroup]="systemEmployeeEmailUpdate">
+                            <div class="mb-3">
+
+                                <div class="row">
+                                    <label>Email</label>
+                                    <div class="col"><img>Update your Email
+                                        updates</div>
+                                    <div class="col"> <input class="form-select" formControlName="lastName"></div>
+                                    <div class="col"><button [disabled]="!systemEmployeeEmailUpdate.valid"
+                                            (click)="updateEmail()" class="btn btn-primary">
+                                            Update
+                                        </button></div>
+
+                                </div>
+                            </div>
+
+                            
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<!-- <div class="newsletter">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="content">
+                    <h2>SUBSCRIBE NOW</h2>
+                    <h6 class="content-tuned">Subscribe to our newsletter and stay tuned with future updates</h6>
+                    <div class="input-group"> <input type="email" class="form-control" placeholder="Enter email to subscribe">
+                        <span class="input-group-btn"> <button class="btn" type="submit">Subscribe Now</button></span>
+                    </div>
+                    
+                    <div class="text-center"> <a class="unsubscribe-link" href="#">Would you like to unsubscribe?</a></div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+<!-- <form [formGroup]="systemEmployeeEmailUpdate">
+                 <div class="mb-3">
+                    <label>Email</label>
+                    <input class="form-select" formControlName="email">
+                    <button [disabled]="!systemEmployeeEmailUpdate.valid" (click)="updateEmail()"
+                        class="btn btn-primary">
+                        Güncelle
+                    </button>
+                </div>
+             </form> -->
+
+
+
+<!-- 
+<form [formGroup]="systemEmployeeFirstNameUpdate">
+
+    <div class="mb-3">
+        <label>First Name</label>
+        <input class="form-select" formControlName="firstName">
+        <button [disabled]="!systemEmployeeFirstNameUpdate.valid" (click)="updateFirstName()" class="btn btn-primary">
+            Güncelle
+        </button>
+    </div>
+</form>
+
+
+
+<form [formGroup]="systemEmployeeLastNameUpdate">
+
+    <div class="mb-3">
+        <label>Last Name</label>
+        <input class="form-select" formControlName="lastName">
+        <button [disabled]="!systemEmployeeLastNameUpdate.valid" (click)="updateLastName()" class="btn btn-primary">
+            Güncelle
+        </button>
+    </div>
+</form> -->

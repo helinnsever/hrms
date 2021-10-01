@@ -1,0 +1,53 @@
+ <div class="card">
+ 
+    <p-table #dt [value]="positionList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','country.name','representative.name','status']" responsiveLayout="scroll"
+        [(selection)]="selectedPosition" [rowHover]="true" dataKey="id"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+    
+         
+        <ng-template pTemplate="header">
+            <tr>
+                 
+                <th pSortableColumn="title">Position Title <p-sortIcon field="name"></p-sortIcon></th>
+                <th> </th>
+                 <th><p-columnFilter type="text" field="title" display="menu" class="p-ml-auto">
+                </p-columnFilter></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-positionList>
+            <tr>
+                 
+                <td>{{positionList.title}}</td>
+                 <td>
+                      
+                 </td>
+                 <td></td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="p-d-flex p-ai-center p-jc-between">
+                In total there are {{positionList ? positionList.length : 0 }} position.
+            </div>
+        </ng-template>
+    </p-table>
+</div>
+ 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal12313" tabindex="-1" aria-labelledby="exampleModalLabel12313" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel12313">Delete</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure want to delete this position?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 

@@ -1,0 +1,163 @@
+<!-- <table class="table">
+  <thead *ngIf="favorites.length>0; else thenBlock">
+    <tr>
+
+      <th scope="col">Employer Id</th>
+      <th scope="col">Company Name</th>
+      <th scope="col">Position Title</th>
+      <th scope="col">Number of Open Positions</th>
+      <th scope="col">Release Date</th>
+      <th scope="col">Deadline</th>
+      <th scope="col">Work Model</th>
+      <th scope="col">Work Time</th>
+      <th scope="col">Remove </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let favorite of favorites">
+      <td>{{favorite.employer.id}}</td>
+      <td>{{favorite.employer.companyName}}</td>
+
+      <td>{{favorite.position.title}}</td>
+      <td>{{favorite.openPositions}}</td>
+      <td>{{favorite.createdAt | date :'dd/MM/yyyy'}}</td>
+      <td>{{favorite.deadline | date: 'dd/MM/yyyy'}}</td>
+      <td>{{favorite.workModel}}</td>
+      <td>{{favorite.workTime}}</td>
+      <td class="text-center" (click)="removeFromFavorite(favorite)" style="cursor:pointer"><a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
+            viewBox="0 0 16 16">
+            <path
+              d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+          </svg>
+        </a></td>
+
+    </tr>
+
+  </tbody> -->
+
+  <!-- <ng-template #thenBlock>
+
+    <div class="alert alert-info">
+
+      There are no ads in favorites.
+
+    </div>
+  </ng-template>
+
+
+
+</table> -->
+
+
+ <div class="card">
+   
+   <img src="">
+  <!-- <h3 style="text-align: center; margin-top: 3rem; margin-bottom: 3rem; ; ">Your Favorites</h3> -->
+ 
+  <p-table #dt1 [value]="favorites" dataKey="id" [rows]="10" [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="[10,20,50,100]"  styleClass="p-datatable-gridlines" [paginator]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [globalFilterFields]="['name','country.name','representative.name','status']">
+    <ng-template pTemplate="caption">
+      <div class="p-d-flex">
+        
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th>
+          <div class="p-d-flex p-jc-between p-ai-center">
+             <p-columnFilter type="text" field="name" display="menu"></p-columnFilter>
+             Company
+          </div>
+        </th>
+        <th>
+          <div class="p-d-flex p-jc-between p-ai-center">
+            <p-columnFilter type="text" field="country.name" display="menu"></p-columnFilter>            
+            Position  
+           </div>
+        </th>
+
+        <th>
+          <div class="p-d-flex p-jc-between p-ai-center">
+             <p-columnFilter type="text" field="country.name" display="menu"></p-columnFilter> 
+              Open Positions
+          </div>
+        </th>
+        <th>
+          <div class="p-d-flex p-jc-between p-ai-center">
+             <p-columnFilter type="text" field="country.name" display="menu"></p-columnFilter>
+             Release Date
+          </div>
+        </th>
+        <th>
+          <div class="p-d-flex p-jc-between p-ai-center">
+             <p-columnFilter type="text" field="country.name" display="menu"></p-columnFilter> 
+             Deadline
+          </div>
+        </th>
+        <th>
+          <div class="p-d-flex p-jc-between p-ai-center  ">
+             <p-columnFilter type="text" field="country.name" display="menu"></p-columnFilter> 
+             Work Model
+          </div>
+        </th>
+        <th>
+          <div class="p-d-flex p-jc-between p-ai-center">
+             <p-columnFilter type="text" field="country.name" display="menu"></p-columnFilter>  
+             Work Time
+          </div>
+        </th>
+
+        <th>
+          <div class="p-d-flex p-jc-between p-ai-center">
+             <p-columnFilter type="text" field="country.name" display="menu"></p-columnFilter> 
+             Remove  
+          </div>
+        </th>
+    </ng-template>
+    <ng-template pTemplate="body" let-favorite>
+      <tr>
+        
+          <td>{{favorite.employer.companyName}}
+        </td>
+        <td>
+          {{favorite.position.title}}
+         </td>
+         <td>
+          {{favorite.openPositions}}
+         </td>
+        <td>
+          {{favorite.createdAt | date :'dd/MM/yyyy'}}
+         </td>
+        <td>
+          {{favorite.deadline | date: 'dd/MM/yyyy'}}
+        </td>
+        <td>
+          {{favorite.workModel}}
+        </td>
+        <td>
+          {{favorite.workTime}}
+        </td>
+        <td class="text-center" (click)="removeFromFavorite(favorite)" style="cursor:pointer"><a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
+            viewBox="0 0 16 16">
+            <path
+              d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+          </svg>
+        </a></td>
+       </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="7"><div class="alert alert-dismissible alert-primary">
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          <strong>There are no ads in favorites.</strong> 
+        </div></td>
+      </tr>
+    </ng-template>
+
+
+  </p-table>
+</div> 

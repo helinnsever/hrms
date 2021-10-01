@@ -1,0 +1,144 @@
+<div *ngIf="checkEmployer(); else thenBlock">
+  <div class="shadow p-3 mb-5 bg-white rounded-3">
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+      <div class="animate__animated animate__bounce animate__delay-1s">
+        <h1 class="animate__bounce" style="font-weight: bold;">Find Job or Hire</h1>
+      </div>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Find your next job, fast.
+          Search by skills. View salaries. One-click apply.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4" routerLink="job-advertisement-add">Add Job
+            Advertisement</button>
+          <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" routerLink="list-candidates">List
+            Candidates</button>
+        </div>
+      </div>
+      <picture>
+        <img itemprop="contentUrl" class="rounded-3" width="1105"
+          src="https://images-ext-1.discordapp.net/external/g_3S7uCpKDNy91nG006nAtD_-wqWTja6OFwEfgJ_utA/%3Fixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26ixlib%3Drb-1.2.1%26auto%3Dformat%26fit%3Dcrop%26w%3D870%26q%3D80/https/images.unsplash.com/photo-1542744173-8e7e53415bb0"
+          title="Business Woman Working on Her Laptop Free Stock Photo"
+          alt="Business Woman Working on Her Laptop Free Stock Photo">
+      </picture>
+      <div class="overflow-hidden" style="max-height: 30vh;">
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #thenBlock>
+  <div *ngIf="checkSystemEmployee(); else elseIfBlock">
+    <div class="shadow p-3 mb-5 bg-white rounded-3">
+      <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <div class="animate__animated animate__bounce animate__delay-1s">
+          <h1 class="animate__bounce" style="font-weight: bold;">Find a Job or Hire</h1>
+        </div>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4"> Find your next job, fast.
+            Search by skills. View salaries. One-click apply.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4" routerLink="unverifiedJobList">List
+              Unverified Jobs</button>
+            <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" routerLink="positions-add">Click to add a
+              position</button>
+          </div>
+        </div>
+        <picture>
+          <img itemprop="contentUrl" class="rounded-3" width="1105"
+            src="https://images-ext-2.discordapp.net/external/mH0rouR9oLV6Ava4bSKXl_Y4WsDMji474UW2CaXVg_I/%3Fixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26ixlib%3Drb-1.2.1%26auto%3Dformat%26fit%3Dcrop%26w%3D870%26q%3D80/https/images.unsplash.com/photo-1492551557933-34265f7af79e"
+            title="Business Woman Working on Her Laptop Free Stock Photo"
+            alt="Business Woman Working on Her Laptop Free Stock Photo">
+        </picture>
+        <div class="overflow-hidden" style="max-height: 30vh;">
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #elseIfBlock>
+  <div *ngIf="checkCandidate(); else elseBlock">
+    <div class="shadow p-3 mb-5 bg-white rounded-3">
+      <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <div class="animate__animated animate__bounce animate__delay-1s">
+          <h1 class="animate__bounce" style="font-weight: bold;">Find a Job or Hire</h1>
+        </div>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">Find your next job, fast.
+            Search by skills. View salaries. One-click apply.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4" routerLink="cv-view">View your
+              CV</button>
+            <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" routerLink="job-advertisement-list">View
+              Job Advertisements</button>
+          </div>
+        </div>
+        <picture>
+          <img itemprop="contentUrl" class="rounded-3" width="1105"
+            src="https://images-ext-2.discordapp.net/external/talZOqJARTdm75buj3cQGCwQ9mePelMyQ3MvWEaaZ6k/%3Fixlib%3Drb-1.2.1%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D874%26q%3D80/https/images.unsplash.com/photo-1462206092226-f46025ffe607?width=721&height=479"
+            title="Business Woman Working on Her Laptop Free Stock Photo"
+            alt="Business Woman Working on Her Laptop Free Stock Photo">
+        </picture>
+        <div class="overflow-hidden" style="max-height: 30vh;">
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+ 
+  <ng-template #elseBlock>
+    <div class="shadow p-3 mb-5 bg-white rounded-3">
+      <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <div class="animate__animated animate__bounce animate__delay-1s">
+          <h1 class="animate__bounce" style="font-weight: bold;">Find a Job or Hire</h1>
+        </div>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">The possibilities are endless. We have expert freelancers who work in every technical, professional, and creative field imaginable.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+
+
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4" routerLink="candidate-sign">Candidate Sign Up
+              </button>
+            <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" routerLink="cv">
+              Add Cv</button>
+
+
+          </div>
+        </div>
+        <picture>
+          <img itemprop="contentUrl" class="rounded-3" width="1105"
+           
+           src="assets/image/home.jpg" alt="">
+            
+        </picture>
+        <div class="overflow-hidden" style="max-height: 30vh;">
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <div class="container mt-5">
+    <div class="d-flex align-items-center cards">
+      <div class="card" *ngFor="let jobAdvertisement of jobAdvertisements">
+        <div class="mb-3"> <span class="text-grey fs-5">
+            <p>{{jobAdvertisement.workModel}}</p>
+          </span>
+          <span class="light-grey fs-6">
+            <p>{{jobAdvertisement.createdAt | date :'dd/MM/yyyy'}}-{{jobAdvertisement.deadline | date :'dd/MM/yyyy'}}
+            </p>
+          </span>
+        </div>
+        <div class="h5"> {{jobAdvertisement.position.title}} </div>
+        <div class="mt-auto">
+          <div class="d-flex align-items-center">
+            <div class="profile"> <img src="https://cdn1.iconfinder.com/data/icons/mix-color-3/502/Untitled-35-512.png"
+                alt=""> </div>
+            <div class="ms-2">
+              <div class="light-grey fs-6">Campony Name</div>
+              <div class="text-grey fs-5"> {{jobAdvertisement.employer.companyName | uppercase}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 

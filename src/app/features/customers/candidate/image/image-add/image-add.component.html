@@ -1,0 +1,24 @@
+<div class="container  w-75 mt-3">
+
+
+  <div class="row">
+
+    <div class="col-md-3">
+
+      <div class="cv-school-img">
+        <img src="https://maxcdn.icons8.com/Share/icon/nolan/Security/id_verified1600.png" width="100%">
+    </div>
+
+    </div>
+    <div class="col-md-9">
+      <form [formGroup]="imageAddForm" class="m-3">
+        <label for="formFile" class="form-label">Please choose your photo</label>
+        <input (change)="onFileSelected($event)" class="form-control w-100" formControlName="multipartFile" type="file"
+          id="multipartFile" />
+        <button [disabled]="!imageAddForm.valid" class="btn btn-primary my-3" (click)="uploadImage()">
+          Upload image
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

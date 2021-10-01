@@ -1,0 +1,194 @@
+<!-- <div class="content shadow p-3 mb-5 bg-white rounded">
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="sign-img">
+                <img [src]="'assets/image/sign.svg'" width="100%">
+            </div>
+            
+        </div>
+        <div class="col-md-6">
+            <form [formGroup]="signCandidateForm">
+                <div class="form-group mx-3">
+                    <label class="text-primary">First Name</label>
+
+                    <input class="form-control" type="text" id="firstName" formControlName="firstName">
+                    <small
+                        *ngIf="signCandidateForm.get('firstName').hasError('required') && signCandidateForm.get('firstName').touched"
+                        class="form-text text-muted">
+                        Name is required
+                    </small>
+                </div>
+                <div class="form-group mt-2 mx-3">
+                    <label class="text-primary">Last Name</label>
+                    <input class="form-control" type="text" id="lastName" formControlName="lastName">
+                    <small
+                        *ngIf="signCandidateForm.get('lastName').hasError('required') && signCandidateForm.get('lastName').touched"
+                        class="form-text text-muted">
+                        lastName is required
+                    </small>
+
+                </div>
+                <div class="form-group mt-2 mx-3">
+                    <label class="text-primary">Nationality Identity</label>
+                    <input class="form-control" type="text" id="nationalityId" formControlName="nationalityId">
+                    <small
+                        *ngIf="signCandidateForm.get('nationalityId').hasError('required') && signCandidateForm.get('nationalityId').touched"
+                        class="form-text text-muted">
+                        Nationality Id is required
+                    </small>
+
+                </div>
+                <div class="form-group mt-2 mx-3">
+                    <label class="text-primary">Birth Year</label>
+                    <input class="form-control" type="number" id="birthYear" formControlName="birthYear">
+                    <small
+                        *ngIf="signCandidateForm.get('birthYear').hasError('required') && signCandidateForm.get('birthYear').touched"
+                        class="form-text text-muted">
+                        Birth year is required
+                    </small>
+
+                </div>
+                <div class="form-group mt-2 mx-3">
+                    <label class="text-primary">Email</label>
+                    <input class="form-control" type="text" id="email" formControlName="email">
+                    <small
+                        *ngIf="signCandidateForm.get('email').hasError('required') && signCandidateForm.get('email').touched"
+                        class="form-text text-muted">
+                        Email is required
+                    </small>
+
+                </div>
+                <div class="form-group mt-2 mx-3">
+                    <label class="text-primary">Password</label>
+                    <input class="form-control" type="password" id="password" [(ngModel)]="password"
+                        formControlName="password">
+                    <small
+                        *ngIf="signCandidateForm.get('password').hasError('required') && signCandidateForm.get('password').touched"
+                        class="form-text text-muted">
+                        Password is required
+                    </small>
+
+                </div>
+                <div class="form-group mt-2 mx-3">
+                    <label class="text-primary">Password Again</label>
+                    <input class="form-control" type="password" id="verifyPassword" [(ngModel)]="verifyPassword"
+                        formControlName="verifyPassword">
+                    <small
+                        *ngIf="signCandidateForm.get('verifyPassword').hasError('required') && signCandidateForm.get('verifyPassword').touched"
+                        class="form-text text-muted">
+                        Password is required
+                    </small>
+
+                </div>
+                <button [disabled]="!signCandidateForm.valid" class="btn btn-primary btn-fill mt-3 mx-3" (click)="add()">Sign
+                    in</button>
+            </form>
+        </div>
+    </div>
+
+</div> -->
+
+
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+    <div class="shadow p-3 mb-5 bg-body rounded">
+    <div class="card px-1 py-4">
+        <div class="card-body">
+            <h6 class="card-title mb-3">This appointment is for</h6>
+            <div class="d-flex flex-row"> <label class="radio mr-1"> <input type="radio" name="add" value="anz" checked> <span> <i class="fa fa-user">
+             </i> Anz CMK </span> </label> <label class="radio"> <input type="radio" name="add" value="add"> <span> <i class="fa fa-plus-circle">
+             </i> Add </span> </label> </div>
+
+
+ 
+            <h6 class="information mt-4">Please provide following information about Anz CMK</h6>
+            <form [formGroup]="signCandidateForm">
+            <div class="row">
+ 
+                <input class="form-control" type="text" id="firstName" formControlName="firstName" placeholder="First Name">
+                <small
+                    *ngIf="signCandidateForm.get('firstName').hasError('required') && signCandidateForm.get('firstName').touched"
+                    class="form-text text-muted">
+                    Name is required
+                </small>
+
+            </div>
+
+            <div class="row">
+
+                 <input class="form-control" type="text" id="lastName" formControlName="lastName" placeholder="Last Name">
+                <small
+                    *ngIf="signCandidateForm.get('lastName').hasError('required') && signCandidateForm.get('lastName').touched"
+                    class="form-text text-muted">
+                    lastName is required
+                </small>
+
+            </div>
+
+            <div class="row">
+
+                 <input class="form-control" type="text" id="nationalityId" formControlName="nationalityId" placeholder="Nationality Identity">
+                <small
+                    *ngIf="signCandidateForm.get('nationalityId').hasError('required') && signCandidateForm.get('nationalityId').touched"
+                    class="form-text text-muted">
+                    Nationality Id is required
+                </small>
+
+            </div>
+
+            <div class="row">
+
+                     <input class="form-control" type="year" id="birthYear" formControlName="birthYear" placeholder="Birth Year">
+                    <small
+                        *ngIf="signCandidateForm.get('birthYear').hasError('required') && signCandidateForm.get('birthYear').touched"
+                        class="form-text text-muted">
+                        Birth year is required
+                    </small>
+
+            </div>
+
+            <div class="row">
+
+                 <input class="form-control" type="email" id="email" formControlName="email" placeholder="Email">
+                <small
+                    *ngIf="signCandidateForm.get('email').hasError('required') && signCandidateForm.get('email').touched"
+                    class="form-text text-muted">
+                    Email is required
+                </small>
+
+            </div>
+
+            <div class="row">
+
+                     <input class="form-control" type="password" id="password" [(ngModel)]="password"
+                        formControlName="password" placeholder="Birth Year" placeholder="Password">
+                    <small
+                        *ngIf="signCandidateForm.get('password').hasError('required') && signCandidateForm.get('password').touched"
+                        class="form-text text-muted">
+                        Password is required
+                    </small>
+                    
+            </div>
+
+            <div class="row">
+
+                 <input class="form-control" type="password" id="verifyPassword" [(ngModel)]="verifyPassword"
+                    formControlName="verifyPassword" placeholder="Password Again">
+                <small
+                    *ngIf="signCandidateForm.get('verifyPassword').hasError('required') && signCandidateForm.get('verifyPassword').touched"
+                    class="form-text text-muted">
+                    Password is required
+                </small>
+
+            </div>
+
+</form>
+            <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> 
+                <small class="agree-text">By Booking this appointment you agree to the</small> 
+                <a href="#" class="terms">Terms & Conditions</a> </div> 
+                <button [disabled]="!signCandidateForm.valid" class="btn btn-primary btn-fill mt-3 mx-3" (click)="add()">Sign
+                    in</button>
+        </div>
+    </div>
+</div></div>

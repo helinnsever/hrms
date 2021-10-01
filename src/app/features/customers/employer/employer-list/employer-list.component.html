@@ -1,0 +1,75 @@
+    <div class="card">
+    <h5>Filter Row</h5>
+    <p>Filters are displayed inline within a separate row.</p>
+
+    <p-table #dt2 [value]="employers" 
+    dataKey="id" [rows]="10" 
+    [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="[10,20,50,100]" [paginator]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [globalFilterFields]="['firstName','lastName','email','nationalityId', 'birthYear']">
+
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex">
+
+            </div>
+        </ng-template>
+
+        <ng-template pTemplate="header">
+          <tr>
+         <th scope="col" ><p-columnFilter type="text" field="companyName" display="menu"
+          class="p-ml-auto">
+      </p-columnFilter>Company Name</th>
+
+        <th scope="col"><p-columnFilter type="text" field="website" display="menu"
+          class="p-ml-auto">
+      </p-columnFilter>Website</th>
+
+        <th scope="col"><p-columnFilter type="text" field="phoneNumber" display="menu"
+          class="p-ml-auto">
+      </p-columnFilter>Phone Number</th>
+
+        <th scope="col"><p-columnFilter type="text" field="email" display="menu"
+          class="p-ml-auto">
+      </p-columnFilter>Email</th>
+             </tr>
+        
+        </ng-template>
+        <ng-template pTemplate="body" let-employer>
+            <tr>
+                <td>
+                    {{employer.companyName}}
+                </td>
+                <td>
+                    {{employer.website}}
+                </td>
+                <td>
+                    <span>{{employer.phoneNumber}}</span>
+                </td>
+                <td>
+                    <span>{{employer.email}}</span>
+                </td>
+                <td *ngIf="employer.updateVerified===false">
+                    <button  (click)="ApplyChanges(employer)" class="btn btn-primary">
+                        Onayla
+                    </button> 
+                </td>
+                
+                   
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="5">No candidate found.</td>
+            </tr>
+        </ng-template>
+
+        <div *ngIf="checkSystemEmployee();">
+            <app-navi-employer-info></app-navi-employer-info>
+          </div>
+
+        <button  (click)="ApplyChanges(employer)" class="btn btn-primary">
+            Onayla
+        </button> 
+    </p-table>
+</div>

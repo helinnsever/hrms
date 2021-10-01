@@ -1,0 +1,39 @@
+ 
+    <h2 class="accordion-header" id="headingOne8">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne8" aria-expanded="true" 
+      aria-controls="collapseOne8">
+      <h4>language Informations</h4> 
+      </button>
+    </h2>
+    <div id="collapseOne8" class="accordion-collapse collapse show" aria-labelledby="headingOne8" data-bs-parent="#accordionExample8">
+      <div class="accordion-body">
+        <div class="list-group">
+          <a *ngFor="let candidateLanguage of candidateLanguages"
+              class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+              <i class="bi bi-briefcase-fill opacity-75" style="font-size: 2rem; color: #78c2ad;"></i>
+              <div class="d-flex gap-2 w-100 justify-content-between">
+
+
+                <tr>
+                  <td>
+      
+                  <div>
+                    <h6 class="mb-0">{{candidateLanguage.language.name}}</h6>
+                      <!-- <p class="mb-0 opacity-75">{{candidateJobExperience.workPlace}}</p> -->
+                  </div>
+                    
+                  <small class="opacity-50 text-nowrap"> - <span
+                    *ngIf="candidateLanguage.languageLevel;">{{candidateLanguage.languageLevel}}</span></small>
+                     
+                    <button pButton pRipple   icon="pi pi-trash" class="p-button-danger" (click)="catchLanguageById(candidateLanguage.id)" (click)="deleteLanguageById(candidateLanguage.id)"  ></button>
+
+                   </td>
+                </tr>
+
+                
+              </div>
+          </a>
+      </div>
+       </div>
+     </div>
+ 

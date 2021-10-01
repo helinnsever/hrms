@@ -1,0 +1,78 @@
+  
+   <!-- Button trigger modal -->
+  <div class="card-header">
+ 
+    <div class="cv-school-img">
+      <img  src="assets/image/job.jpg">
+    </div>
+
+
+ <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+   <button type="button" class="btn btn-primary me-md-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+     Add 
+ </button>
+  
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal-dialog">
+
+   <div class="modal-content">
+     <div class="modal-header">
+       <h5 class="modal-title" id="exampleModalLabel">Job Experience Add</h5>
+       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+     </div>
+     <div class="modal-body">
+       <div class="content">
+         <div class="card">
+           <div class="card-body">
+             <form [formGroup]="candidateJobExperienceForm">
+               <div class="mb-3">
+                 <select class="form-select" formControlName="positionId">
+                   <option value="" disabled>Positions</option>
+                   <option *ngFor="let position of positions" [ngValue]="position.id">
+                     {{position.title }}
+                   </option>
+                 </select>
+               </div>
+               <div class="mb-3">
+                 
+                 <input type="year" placeholder="startYear" formControlName="startYear" class="form-control"  />
+             </div>
+             <div class="mb-3">
+                 
+                 <input type="year" placeholder="quitYear" formControlName="quitYear" class="form-control"  />
+             </div>
+             <div class="mb-3">
+                 
+                 <select class="form-select" formControlName="workPlace">
+                   <option value="" disabled>Company Name</option>
+                   <option *ngFor="let employer of employers" [ngValue]="employer.id">
+                     {{employer.companyName }}
+                   </option>
+                 </select>
+               </div>
+             </form>
+            </div>
+         </div>
+       </div>
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       <button
+       [disabled]="!candidateJobExperienceForm.valid"
+       (click)="candidateJobExperienceAdd()"
+       class="btn btn-primary"
+     >
+       Save Changes
+     </button>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+  
+
+ 

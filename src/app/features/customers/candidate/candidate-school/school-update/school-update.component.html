@@ -1,0 +1,46 @@
+<div class="content">
+    <div class="card">
+        <div class="card-body">
+
+            <form [formGroup]="candidateSchoolUpdateForm">
+             
+                  <div class="mb-3">
+                    <label>School</label>
+                         <select  [(ngModel)]="selectedLevel" (change)="selected()" class="form-select" formControlName="schoolId">
+                            <option value="" disabled>School Name</option>
+                            <option *ngFor="let item of school" [ngValue]="item.id" >{{item.name}}</option>
+                        </select>
+                 </div>
+
+                 <div class="mb-3">
+                    <label>School</label>
+                    <select  class="form-select" formControlName="schoolId" >
+                        <option value="" disabled>School Name </option>
+                        <option *ngFor="let school of schools" [ngValue]="school.id" >{{school.name}}</option>  
+                    </select>
+                </div>
+
+
+                <!-- <div class="mb-3">
+                    <label>Graduation Year</label>
+                    <input type="year" placeholder="graduationYear" formControlName="graduationYear" class="form-control"  />
+                </div>
+                <div class="mb-3">
+                    <label>Department Name</label>
+                    <select  class="form-select" formControlName="departmentId" >
+                        <option *ngFor="let department of departments" [ngValue]="department.id" >{{department.name}}</option>  
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>Start Year</label>
+                    <input type="year" placeholder="startYear" formControlName="startYear"
+                        class="form-control" />
+                </div> -->
+
+
+                <button (click)="updateSchoool()">Güncelle</button>
+            </form>
+        </div>
+        
+    </div>
+    

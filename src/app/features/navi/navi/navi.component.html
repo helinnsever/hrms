@@ -1,0 +1,125 @@
+<header style="margin-bottom: 40px; ">
+
+  <nav class="navbar navbar-expand-lg shadow p-3 mb-5 bg-white rounded-3">
+    <div class="container-fluid">
+      <img routerLink=""
+        src="https://images-ext-2.discordapp.net/external/T-PO6JeCbe9uvt_PYNbvPfqveeVT8npphjZPjfChlyE/%3Fq%3Dtbn%3AANd9GcRhTDBwJj9W1FfnUh_MtSZxnI_CmdN67fDang%26usqp%3DCAU/https/encrypted-tbn0.gstatic.com/images"
+        style="width: 100px;">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div style="justify-content: end;" class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <div class="d-flex">
+
+          <button class="btn btn-primary mx-3" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            List
+          </button>
+
+          <div *ngIf="checkEmployer(); else thenBlock">
+            <app-navi-employer-info></app-navi-employer-info>
+          </div>
+          <ng-template #thenBlock>
+            <div *ngIf="checkSystemEmployee(); else elseIfBlock">
+              <app-navi-system-employee-info></app-navi-system-employee-info>
+            </div>
+          </ng-template>
+          <ng-template #elseIfBlock>
+            <div *ngIf="checkCandidate(); else elseBlock">
+              <app-navi-candidate-info></app-navi-candidate-info>
+            </div>
+          </ng-template>
+          <div class="collapse navbar-collapse navbar-nav me-auto mb-2 mb-lg-0" id="navbarSupportedContent">
+            <ng-template #elseBlock>
+              <app-navi-sign></app-navi-sign>
+
+
+
+              <head>
+                <link rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+              </head>
+              <button type="button" class="btn btn-primary" routerLink="login">
+                Login
+              </button>
+
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+
+<div>
+  <div class="offcanvas offcanvas-start bg-white" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel"><span class="navbar-brand mb-0 h1">
+          <img src=" " routerLink="" width="100px">
+        </span></h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+
+        <div *ngIf="checkEmployer(); else then2Block">
+
+          <li style="list-style: none;"><a class="dropdown-item" routerLink="list-candidates">List Candidates</a></li>
+          <li style="list-style: none;"><a class="dropdown-item" routerLink="list-positions">List Positions</a></li>
+          <li style="list-style: none;"><a class="dropdown-item" routerLink="job-advertisement-add">Add a Job Advertisement</a></li>
+          <li style="list-style: none;"><a class="dropdown-item" routerLink="employer-update">Update your company information</a></li>
+          <li style="list-style: none;"><a class="dropdown-item" routerLink="view-employer-info">View your company information</a></li>
+           <li style="list-style: none;"><a class="dropdown-item" routerLink="password-update">Change Password</a></li>
+
+        </div>
+
+        <ng-template #then2Block>
+
+          <div *ngIf="checkSystemEmployee(); else else2IfBlock">
+
+            <li style="list-style: none;" class="nav-item"><a class="dropdown-item" routerLink="positions-add">Add Position</a></li>
+            <li style="list-style: none;"><a class="dropdown-item" routerLink="list-positions">List Positions</a></li>
+          <li style="list-style: none;"><a class="dropdown-item" routerLink="job-advertisement-list">List Active JobAdvertisement</a></li>
+          <li style="list-style: none;"><a class="dropdown-item" routerLink="unverifiedJobList">List Unverified JobAdvertisement</a></li>
+         <li style="list-style: none;"><a class="dropdown-item" routerLink="system-employee-update">Update Your Information</a></li>
+          <li style="list-style: none;"><a class="dropdown-item" routerLink="password-update">Change Password</a></li>
+          
+          </div>
+        </ng-template>
+
+        <ng-template #else2IfBlock>
+          <div *ngIf="checkCandidate(); else else2Block">
+
+            <li style="list-style: none;"><a class="dropdown-item" routerLink="list-positions">List Positions</a></li>
+            <li style="list-style: none;"><a class="dropdown-item" routerLink="password-update">Change Password</a></li>
+          <li style="list-style: none;" class="nav-item"><a class="dropdown-item" routerLink="cv">Add CV</a></li>
+          <li style="list-style: none;"><a class="dropdown-item" routerLink="job-advertisement-list">List Active Job Advertisements</a></li>
+          <li style="list-style: none;"><a class="dropdown-item" routerLink="cv-view">View Your Cv</a></li>
+          <li style="list-style: none;"><a class="dropdown-item" routerLink="updateCV">Update Your Cv</a></li>
+          <li style="list-style: none;"><a class="dropdown-item" routerLink="favorites">View your Favorite Job Advertisements</a></li>
+          
+
+         
+          </div>
+        </ng-template>
+
+        <ng-template #else2Block>
+
+         <li style="list-style: none;"><a class="dropdown-item" routerLink="abuot-us">About Us</a></li>
+          <li style="list-style: none;" class="nav-item"><a class="dropdown-item" routerLink="cv">Add CV</a></li>
+          <li style="list-style: none;"><a class="dropdown-item" routerLink="job-advertisement-list">List Active JobAdvertisements</a></li>
+          <li style="list-style: none;"><a class="dropdown-item" routerLink="candidate-sign">Candidate Sign</a></li>
+
+        </ng-template>
+
+      </div>
+    </div>
+  </div>
+</div>

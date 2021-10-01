@@ -1,0 +1,46 @@
+
+  
+  <table  class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Employer Id</th>
+          <th scope="col">Company Name</th>
+          <th scope="col">Position Title</th>
+          <th scope="col">Number of Open Positions</th>
+          <th scope="col">Release Date</th>
+          <th scope="col">Deadline</th>
+          <th scope="col">Work Model</th>
+          <th scope="col">Work Time</th>
+      
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let jobAdvertisement of unverifiedJobAdvertisements | paginate: { itemsPerPage: 10, currentPage: page } ">
+          <th scope="row">{{jobAdvertisement.id}}</th>
+          <td>{{jobAdvertisement.employer.id}}</td>
+          <td>{{jobAdvertisement.employer.companyName}}</td>
+          <td>{{jobAdvertisement.position.title}}</td>
+          <td>{{jobAdvertisement.openPositions}}</td>
+          <td>{{jobAdvertisement.createdAt | date :'dd/MM/yyyy'}}</td>
+          <td>{{jobAdvertisement.deadline| date: 'dd/MM/yyyy'}}</td>
+          <td>{{jobAdvertisement.workModel}}</td>
+          <td>{{jobAdvertisement.workTime}}</td>
+         
+         
+          <div *ngIf="checkSystemEmployee(); else elseBlock">
+            <td><button class="btn btn-danger btn-sm" (click)=" changeVerification(jobAdvertisement)">Verify Job</button>
+            </td>
+            
+          </div>
+          <ng-template #elseBlock>
+            <td></td>
+          </ng-template>
+        </tr>
+      </tbody>
+  </table>
+  
+  
+  
+  <pagination-controls class="pagi" (pageChange)="page = $event"></pagination-controls>
+  

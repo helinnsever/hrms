@@ -1,0 +1,45 @@
+<h2 class="accordion-header" id="headingOne15">
+  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne15"
+    aria-expanded="true" aria-controls="collapseOne15">
+    <h4>Skill Informations</h4>
+  </button>
+</h2>
+<div id="collapseOne15" class="accordion-collapse collapse show" aria-labelledby="headingOne15"
+  data-bs-parent="#accordionExample15">
+  <div class="accordion-body">
+    <div class="list-group">
+      <a *ngFor="let skill of candidateSkills" class="list-group-item list-group-item-action d-flex gap-3 py-3"
+        aria-current="true">
+        <i class="bi bi-book-half opacity-75" style="font-size: 2rem; color: #78c2ad;"></i>
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <table>
+              <tr>
+                <div class="row d-flex">
+                  <div class="col">
+                    <td>
+                      <p class="mb-0 opacity-75"> {{skill.skill.name}}</p>
+                    </td>
+                  </div>
+
+                  <div class="col d-flex justify-content-end">
+                    <td>
+                      <button pButton pRipple icon="pi pi-trash"  data-bs-dismiss="modal" class="p-button-danger"
+                        (click)="catchSkillId(skill.id)" (click)="deleteSkillsById(skill.id)"></button>
+
+                  </div>
+                </div>
+
+              </tr>
+
+            </table>
+            <h6 class="mb-0"> </h6>
+
+
+          </div>
+          <small class="opacity-50 text-nowrap"><span> </span></small>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

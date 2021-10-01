@@ -1,0 +1,182 @@
+<!-- <div>
+  <input type="text" [(ngModel)]="filterText" class="form-control" placeholder="arama"/>
+  <span *ngIf="filterText" class="badge bg-primary">{{filterText}}aradınız</span>
+</div>
+
+<table  class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Employer Id</th>
+        <th scope="col">Company Name</th>
+        <th scope="col">Position Title</th>
+        <th scope="col">Number of Open Positions</th>
+        <th scope="col">Release Date</th>
+        <th scope="col">Deadline</th>
+        <th scope="col">Work Model</th>
+        <th scope="col">Work Time</th>
+        <th><button class = "btn btn-info btn-sm"  (click) = "SortByCreatedDate()">Tarihe göre sırala</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let jobAdvertisement of jobAdvertisements  | paginate: { itemsPerPage: 10, currentPage: page } ">
+        <th scope="row">{{jobAdvertisement.id}}</th>
+        <td><a (click) = "getActiveJobAdvertisementsByEmployer(jobAdvertisement.employer.id)" routerLink="jobAdvertisements/{{jobAdvertisement.employer.id}}">{{jobAdvertisement.employer.id}}</a></td>
+        <td>{{jobAdvertisement.employer.companyName}}</td>
+        <td>{{jobAdvertisement.position.title}}</td>
+        <td>{{jobAdvertisement.openPositions}}</td>
+        <td>{{jobAdvertisement.createdAt | date :'dd/MM/yyyy'}}</td>
+        <td>{{jobAdvertisement.deadline| date: 'dd/MM/yyyy'}}</td>
+        <td>{{jobAdvertisement.workModel}}</td>
+        <td>{{jobAdvertisement.workTime}}</td>
+       
+       
+        <div *ngIf="checkEmployer(); else elseBlock">
+          <td><button class="btn btn-danger btn-sm" (click)="changeStatus(jobAdvertisement)">Pasif Yap</button>
+          </td>
+        </div>
+        <ng-template #elseBlock>
+          <td><button class="btn btn-danger btn-sm" (click)=" changeVerificationToUnverified(jobAdvertisement)">Unverify Job</button>
+          </td>
+         </ng-template>
+      </tr>
+    </tbody>
+</table>
+
+
+
+<pagination-controls class="pagi" (pageChange)="page = $event"></pagination-controls> -->
+
+
+<div class="card">
+  
+
+  <p-table #dt12 [value]="jobAdvertisements" 
+  dataKey="id" [rows]="10" 
+  [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="[10,20,50,100]" [paginator]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [globalFilterFields]="['companyName','country.name','representative.name','status']">
+  
+    <ng-template pTemplate="header">
+      <tr>
+         <th scope="col" routerLink="job-advertisement-list/jobAdvertisements/:employerId">
+          <p-columnFilter type="text" field="employer.companyName" display="menu" class="p-ml-auto">
+
+          </p-columnFilter>
+
+           Company Name
+        </th>
+
+        <th scope="col">
+          <p-columnFilter type="text" field="position.title" display="menu" class="p-ml-auto">
+
+          </p-columnFilter>Position
+          Title
+        </th>
+
+        <th scope="col">
+          <p-columnFilter type="text" field="openPositions" display="menu" class="p-ml-auto">
+
+          </p-columnFilter>Number of Open Positions
+        </th>
+
+        <th scope="col">
+          <p-columnFilter type="text" field="createdAt" display="menu" class="p-ml-auto">
+
+          </p-columnFilter>Release Date
+        </th>
+
+        <th scope="col">
+          <p-columnFilter type="text" field="deadline" display="menu" class="p-ml-auto">
+
+          </p-columnFilter>Deadline
+        </th>
+
+        <th scope="col">
+          <p-columnFilter type="text" field="workModel" display="menu" class="p-ml-auto">
+
+          </p-columnFilter>Work Model
+        </th>
+
+        <th scope="col">
+          <p-columnFilter type="text" field="workTime" display="menu" class="p-ml-auto"
+          ></p-columnFilter>Work Time
+        </th>
+        <th scope="col">
+          <button class="btn btn-primary" (click)="SortByCreatedDate()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sort-up" viewBox="0 0 16 16">
+            <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>
+          </svg></button>
+         </th>
+
+
+      </tr>
+
+    </ng-template>
+
+    <ng-template pTemplate="body" let-jobAdvertisement>
+      <tr>
+        <td>
+          <span>{{jobAdvertisement.employer.companyName}}</span>
+        </td>
+        <td>
+          <span>{{jobAdvertisement.position.title}}</span>
+        </td>
+        <td>
+          <span>{{jobAdvertisement.openPositions}}</span>
+        </td>
+        <td>
+          <span>{{jobAdvertisement.createdAt | date :'dd/MM/yyyy'}}</span>
+        </td>
+
+        <td>
+          <span>{{jobAdvertisement.deadline | date :'dd/MM/yyyy'}}</span>
+        </td>
+        <td>
+          <span>{{jobAdvertisement.workModel}}</span>
+        </td>
+        <td>
+          <span>{{jobAdvertisement.workTime}}</span>
+        </td>
+
+
+
+        <td>
+          <div *ngIf="checkSystemEmployee();">
+            <td *ngIf="jobAdvertisement.active===false">
+              <button class="btn btn-danger btn-sm" (click)=" changeVerification(jobAdvertisement)">Verify job</button>
+            </td>
+          </div>
+          <div *ngIf="checkEmployer(); else elseBlock ">
+            <td><button class="btn btn-danger btn-sm" (click)="changeStatus(jobAdvertisement)">Pasif Yap</button>
+            </td>
+          </div>
+          <ng-template #elseBlock>
+             
+            <td class="text-center"  style="cursor:pointer"><button type="button" class="btn btn-primary" (click)="addToFavorite(jobAdvertisement)">
+              
+          
+            <link
+            
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
+</svg>
+            </button></td>  
+              
+           </ng-template>
+
+           
+           
+
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="5">No job advertisements found.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

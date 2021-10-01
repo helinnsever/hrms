@@ -1,0 +1,58 @@
+
+
+
+<div class="card-header">
+
+  
+  <div class="cv-school-img">
+    <img  src="assets/image/skill.jpg">
+  </div>
+   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button type="button" class="btn btn-primary me-md-2"  data-bs-toggle="modal" data-bs-target="#skillAdd">
+      Add 
+  </button>
+   
+ </div>
+  <!-- Modal -->
+  <div class="modal fade" id="skillAdd" tabindex="-1" aria-labelledby="skillAdd" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="skillAdd">Skill Add</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+            <div class="card">
+                <div class="card-body">
+        
+                    <form [formGroup]="candidateSkillForm">
+                        <div class="mb-3">
+                            
+                            <select  class="form-select" formControlName="skillId" >
+                                <option value="" disabled>Skills </option>
+                                <option *ngFor="let skill of skills" [ngValue]="skill.id" >{{skill.name}}</option>  
+                            </select>
+                        </div>
+                    </form>       
+                
+            </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button
+                  [disabled]="!candidateSkillForm.valid"
+                  (click)="candidateSkillAdd()"
+                  class="btn btn-primary"
+                >
+                  Save Changes
+                </button>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+

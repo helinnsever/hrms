@@ -1,0 +1,45 @@
+<div class="content">
+    <form [formGroup]="updateCoverLetterForm">
+        <div class="form-group">
+            <div class="mb-3" *ngFor="let cv of cvs">
+                <label>Cover Letter : {{cv.title}}</label>
+                
+                
+                     <input  class="form-select" (click)="cathcId(cv.id)" formControlName="coverLetter">
+                     
+            </div>
+        </div>
+        
+        <div class="card-footer">
+          <button class="btn btn-sm" [disabled]="!updateCoverLetterForm.valid" (click)="updateCoverLetter()" class="btn btn-primary">
+            Update
+          </button>
+        </div>
+             
+    
+    </form>
+
+    <form [formGroup]="updateCvTitleForm">
+        <div class="form-group">
+            <div class="mb-3" *ngFor="let cv of cvs">
+                <label>Cv Title : {{cv.title}}</label>
+                
+                
+                     <input class="form-select" (click)="cathcId(cv.id)" formControlName="title">
+                     
+            </div>
+        </div>
+        
+        <div class="card-footer">
+          <button class="btn btn-sm" [disabled]="!updateCvTitleForm.valid" (click)="updateCvTitle()" class="btn btn-primary">
+            Update
+          </button>
+        </div>
+
+       
+             
+    
+    </form>
+</div>
+
+
